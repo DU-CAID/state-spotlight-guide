@@ -2,7 +2,7 @@
 
 Resources for writing state-level AI legislation reports using the [CAID State AI Legislation Tracker](https://du-caid.github.io/tracker/).
 
-## What's in this repo
+## In the repo
 
 | File | What it is |
 |---|---|
