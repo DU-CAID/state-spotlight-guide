@@ -1,6 +1,6 @@
 """
 analyze_state.py - CAID State AI Legislation Report Template Script
-====================================================================
+=====================================================================
 Pulls bill data for any U.S. state from the public CAID dashboard
 and prints a structured summary for use in state spotlight reports.
 
@@ -13,7 +13,7 @@ Output is printed to the terminal. Redirect to a file if you want to save it:
 
 See docs/state-spotlight-report-guide.md for how to interpret the output.
 
-Last update: 11 March 2026 (Stefani Langehennig)
+Last update: 11 March 2026 (Stefani Langehennig) 
 """
 
 import sys
