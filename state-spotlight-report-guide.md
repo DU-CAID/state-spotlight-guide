@@ -2,7 +2,7 @@
 
 ## Overview
 
-The CAID State AI Legislation Tracker publishes all its data as public JSON files hosted on GitHub Pages. You don't need access to the DuckDB database or any internal files to do a state spotlight analysis. Everything you need for the quantitative layer is available at:
+The CAID State AI Legislation Tracker publishes all its data as public JSON files hosted on GitHub Pages. You don't need access to the DuckDB database or any internal files to do a state spotlight analysis. Everything you need for the quantitative part is available at:
 
 ```
 https://du-caid.github.io/tracker/data/bills_by_state/<STATE>.json
@@ -10,7 +10,7 @@ https://du-caid.github.io/tracker/data/bills_by_state/<STATE>.json
 
 Replace `<STATE>` with the two-letter state abbreviation (e.g., `CO`, `NY`, `CA`).
 
-For the qualitative layer - bill text, sponsor details, committee votes, amendment history - you'll use the state legislature's own website, linked directly from the data.
+For the qualitative part - bill text, sponsor details, committee votes, amendment history - you'll use the state legislature's own website, linked directly from the data.
 
 ---
 
@@ -162,3 +162,4 @@ The Colorado spotlight report (`reports/colorado-ai-legislation-2026-q1.html`) i
 - **Summary data**: `https://du-caid.github.io/tracker/data/summary.json`
 - **Concepts data**: `https://du-caid.github.io/tracker/data/concepts.json`
 - **Bills by year**: `https://du-caid.github.io/tracker/data/by_year.json`
+
