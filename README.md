@@ -2,10 +2,6 @@
 
 Resources for writing state-level AI legislation reports using the [CAID State AI Legislation Tracker](https://du-caid.github.io/tracker/).
 
-Developed by the [Center for Analytics and Innovation with Data (CAID)](https://du-caid.github.io/) at the University of Denver.
-
----
-
 ## What's in this repo
 
 | File | What it is |
