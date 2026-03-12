@@ -22,7 +22,7 @@ The script `scripts/analyze_state.py` does all the quantitative work automatical
 python scripts/analyze_state.py CO
 ```
 
-It will print a structured summary: bill counts by year and tier, top AI concepts, a full list of core AI bills with their status, and NCSL-confirmed laws. **This output is the data foundation.** Write it down, paste it into a working document, and use it to structure your report.
+It will print a structured summary: bill counts by year and tier, top AI concepts, a full list of core AI bills with their status, and NCSL-confirmed laws. This output is the data foundation. Write it down, paste it into a working document, and use it to structure your report.
 
 You can run it for any state:
 ```bash
