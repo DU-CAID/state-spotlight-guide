@@ -52,23 +52,39 @@ CONCEPT_LABELS = {
 # outcome classification
 
 def classify_outcome(bill):
-    """Return a short outcome label based on latest_action_description."""
+    """Return a short outcome label based on latest_action_description.
+
+    Uses keyword-based matching rather than exact phrases so it works across
+    states that word their actions differently (e.g. "Governor Signed" vs
+    "Signed by Governor").
+    """
     desc = (bill.get("latest_action_description") or "").lower()
     ncsl = (bill.get("ncsl_status") or "").lower()
 
-    if "governor signed" in desc or ncsl in ("enacted", "signed"):
+    # NCSL status is standardized across states — check it first
+    if ncsl in ("enacted", "signed"):
         return "Signed"
-    if "governor vetoed" in desc or ncsl == "vetoed":
+    if ncsl == "vetoed":
         return "Vetoed"
-    if "postpone indefinitely" in desc:
+
+    # Keyword matching: check for key terms anywhere in the action description
+    has_signed   = "signed" in desc
+    has_vetoed   = "vetoed" in desc or "veto" in desc
+    has_governor = "governor" in desc
+
+    if has_signed and (has_governor or "chaptered" in desc or "enacted" in desc):
+        return "Signed"
+    if has_vetoed and has_governor:
+        return "Vetoed"
+    if "postpone indefinitely" in desc or "failed" in desc and "committee" in desc:
         return "Failed (committee)"
-    if "lay over unamended" in desc or "amendment(s) failed" in desc:
+    if "lay over unamended" in desc or "amendment" in desc and "failed" in desc:
         return "Failed (appropriations)"
     if "lost" in desc:
         return "Failed (floor)"
     if "introduced" in desc:
         return "Introduced"
-    if "sent to the governor" in desc or "enrolled" in desc:
+    if "sent to the governor" in desc or "enrolled" in desc or "delivered to governor" in desc:
         return "Awaiting signature"
     if desc:
         return "In progress"
