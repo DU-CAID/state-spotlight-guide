@@ -5,7 +5,7 @@ Pulls bill data for any U.S. state from the public CAID dashboard
 and prints a structured summary for use in state spotlight reports.
 
 Usage:
-    python scripts/analyze_state.py CO          # fetch live from dashboard
+    python scripts/analyze_state.py CO          # get live from dashboard
     python scripts/analyze_state.py CO --local  # use local copy in tracker/data/
 
 Output is printed to the terminal. Redirect to a file if you want to save it:
@@ -285,7 +285,7 @@ def analyze(bills, state):
     print(f"""
   Next steps:
     1. Review the bill list above and open each URL to read the actual legislation
-    2. Look up sponsors on the state legislature website — not in this data
+    2. Look up sponsors on the state legislature website - not in this data
     3. Search leg.colorado.gov (or your state's equivalent) for committee votes
     4. See docs/state-spotlight-analyst-guide.md for full interpretation notes
 """)
